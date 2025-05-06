@@ -11,13 +11,14 @@
 
     <style> 
 
-.carousel {
+    .carousel {
   width: 500px;
   height: 300px;
   overflow: hidden;
   position: relative;
   border-radius: 12px;
   margin: 0 auto;
+  background: black; /* fallback background */
 }
 
 .slides {
@@ -28,7 +29,7 @@
 }
 
 .slide {
-  flex: 0 0 100%;
+  flex: 0 0 100%; /* each slide takes full width */
   height: 100%;
   display: flex;
   align-items: center;
@@ -40,10 +41,9 @@
   height: 100%;
   object-fit: contain;
 }
-
 @keyframes slide {
   0%   { transform: translateX(0%); }
-  100% { transform: translateX(-90%); }
+  100% { transform: translateX(-90%); } /* 10 slides = 90% shift */
 }
         
     </style>
@@ -71,16 +71,16 @@
 
         <div class="carousel">
   <div class="slides">
-    <div class="slide"><img src="assets/image1.JPG"></div>
-    <div class="slide"><img src="assets/image2.JPG"></div>
-    <div class="slide"><img src="assets/image3.JPG"></div>
-    <div class="slide"><img src="assets/image4.JPG"></div>
-    <div class="slide"><img src="assets/image5.JPG"></div>
-    <div class="slide"><img src="assets/image6.png"></div>
-    <div class="slide"><img src="assets/image7.png"></div>
-    <div class="slide"><img src="assets/image8.JPG"></div>
-    <div class="slide"><img src="assets/map.png"></div>
-    <div class="slide"><img src="assets/title.png"></div>
+    <div class="slide"><img src="/assets/image1.JPG"></div>
+    <div class="slide"><img src="/assets/image2.JPG"></div>
+    <div class="slide"><img src="/assets/image3.JPG"></div>
+    <div class="slide"><img src="/assets/image4.JPG"></div>
+    <div class="slide"><img src="/assets/image5.JPG"></div>
+    <div class="slide"><img src="/assets/image6.png"></div>
+    <div class="slide"><img src="/assets/image7.png"></div>
+    <div class="slide"><img src="/assets/image8.JPG"></div>
+    <div class="slide"><img src="/assets/map.png"></div>
+    <div class="slide"><img src="/assets/title.png"></div>
   </div>
 </div>
 

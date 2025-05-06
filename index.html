@@ -26,7 +26,7 @@
 .carousel .slides img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     flex-shrink: 0;
 }
 
@@ -59,6 +59,13 @@
 #s1:checked ~ .slides { transform: translateX(0%); }
 #s2:checked ~ .slides { transform: translateX(-100%); }
 #s3:checked ~ .slides { transform: translateX(-200%); }
+#s4:checked ~ .slides { transform: translateX(-300%); }
+#s5:checked ~ .slides { transform: translateX(-400%); }
+#s6:checked ~ .slides { transform: translateX(-500%); }
+#s7:checked ~ .slides { transform: translateX(-600%); }
+#s8:checked ~ .slides { transform: translateX(-700%); }
+#s9:checked ~ .slides { transform: translateX(-800%); }
+#s10:checked ~ .slides { transform: translateX(-900%); }
 </style>
 </head>
 <body>
@@ -82,10 +89,17 @@
 
         <!-- Carousel Starts -->
              <!-- Carousel Starts -->
-<div class="carousel" style="width: 400px; height: 300px;">
+<div class="carousel" style="width: 500px; height: 300px;">
     <input type="radio" name="slider" id="s1" checked>
     <input type="radio" name="slider" id="s2">
     <input type="radio" name="slider" id="s3">
+    <input type="radio" name="slider" id="s4">
+    <input type="radio" name="slider" id="s5">
+    <input type="radio" name="slider" id="s6">
+    <input type="radio" name="slider" id="s7">
+    <input type="radio" name="slider" id="s8">
+    <input type="radio" name="slider" id="s9">
+    <input type="radio" name="slider" id="s10">
 
     <div class="slides">
         <img src="/assets/image1.JPG">
@@ -104,6 +118,13 @@
         <label for="s1" class="bar"></label>
         <label for="s2" class="bar"></label>
         <label for="s3" class="bar"></label>
+        <label for="s4" class="bar"></label>
+        <label for="s5" class="bar"></label>
+        <label for="s6" class="bar"></label>
+        <label for="s7" class="bar"></label>
+        <label for="s8" class="bar"></label>
+        <label for="s9" class="bar"></label>
+        <label for="s10" class="bar"></label>
     </div>
 </div>
 <!-- Carousel Ends -->

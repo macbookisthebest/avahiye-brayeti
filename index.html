@@ -11,14 +11,13 @@
 
     <style> 
 
-    .carousel {
+.carousel {
   width: 500px;
   height: 300px;
   overflow: hidden;
   position: relative;
   border-radius: 12px;
   margin: 0 auto;
-  background: black; /* fallback background */
 }
 
 .slides {
@@ -32,6 +31,8 @@
   flex: 0 0 100%; /* each slide takes full width */
   height: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide img {
@@ -39,6 +40,7 @@
   height: 100%;
   object-fit: contain;
 }
+
 @keyframes slide {
   0%   { transform: translateX(0%); }
   100% { transform: translateX(-90%); } /* 10 slides = 90% shift */
@@ -68,18 +70,18 @@
 
 
         <div class="carousel">
-              <div class="slides">
-                <div class="slide"><img src="/assets/image4.JPG"></div>
-                <div class="slide"><img src="/assets/image2.JPG"></div>
-                <div class="slide"><img src="/assets/image3.JPG"></div>
-                <div class="slide"><img src="/assets/image1.JPG"></div>
-                <div class="slide"><img src="/assets/image5.JPG"></div>
-                <div class="slide"><img src="/assets/image6.png"></div>
-                <div class="slide"><img src="/assets/image7.png"></div>
-                <div class="slide"><img src="/assets/image8.JPG"></div>
-                <div class="slide"><img src="/assets/map.png"></div>
-                <div class="slide"><img src="/assets/title.png"></div>
-              </div>
+          <div class="slides">
+                <div class="slide"><img src="assets/image4.JPG" alt=""></div>  <!-- This should be first now -->
+                <div class="slide"><img src="assets/image2.JPG" alt=""></div>
+                <div class="slide"><img src="assets/image3.JPG" alt=""></div>
+                <div class="slide"><img src="assets/image1.JPG" alt=""></div>  <!-- This should be fourth now -->
+                <div class="slide"><img src="assets/image5.JPG" alt=""></div>
+                <div class="slide"><img src="assets/image6.png" alt=""></div>
+                <div class="slide"><img src="assets/image7.png" alt=""></div>
+                <div class="slide"><img src="assets/image8.JPG" alt=""></div>
+                <div class="slide"><img src="assets/map.png" alt=""></div>
+                <div class="slide"><img src="assets/title.png" alt=""></div>
+          </div>
         </div>
 
 

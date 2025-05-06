@@ -10,62 +10,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     <style>
-.carousel {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
+
+    .carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  background: #000;
 }
 
 .carousel .slides {
-    display: flex;
-    width: 1000%;
-    height: 100%;
-    transition: transform 0.4s ease-in-out;
+  display: flex;
+  width: 1000%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
 }
 
-.carousel .slides img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    flex-shrink: 0;
+.carousel .slide {
+  width: 10%;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+}
+
+.carousel .slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  background: white;
 }
 
 .carousel input[type="radio"] {
-    display: none;
+  display: none;
 }
 
 .carousel .navigation {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 6px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
 }
 
 .carousel .bar {
-    width: 10px;
-    height: 10px;
-    background: #bbb;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s;
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .carousel .bar:hover {
-    background: #fff;
+  background: #fff;
 }
 
 #s1:checked ~ .slides { transform: translateX(0%); }
-#s2:checked ~ .slides { transform: translateX(-100%); }
-#s3:checked ~ .slides { transform: translateX(-200%); }
-#s4:checked ~ .slides { transform: translateX(-300%); }
-#s5:checked ~ .slides { transform: translateX(-400%); }
-#s6:checked ~ .slides { transform: translateX(-500%); }
-#s7:checked ~ .slides { transform: translateX(-600%); }
-#s8:checked ~ .slides { transform: translateX(-700%); }
-#s9:checked ~ .slides { transform: translateX(-800%); }
-#s10:checked ~ .slides { transform: translateX(-900%); }
+#s2:checked ~ .slides { transform: translateX(-10%); }
+#s3:checked ~ .slides { transform: translateX(-20%); }
+#s4:checked ~ .slides { transform: translateX(-30%); }
+#s5:checked ~ .slides { transform: translateX(-40%); }
+#s6:checked ~ .slides { transform: translateX(-50%); }
+#s7:checked ~ .slides { transform: translateX(-60%); }
+#s8:checked ~ .slides { transform: translateX(-70%); }
+#s9:checked ~ .slides { transform: translateX(-80%); }
+#s10:checked ~ .slides { transform: translateX(-90%); }
+
 </style>
 </head>
 <body>
@@ -87,49 +105,44 @@
     <div class="title-img-container">
         <p class="title-img-text"><span style="color: #FFCC00;">coming soon</span> at Folklor cafe, Saleh Yousufi street, Zakho, Iraq</p>
 
-        <!-- Carousel Starts -->
-             <!-- Carousel Starts -->
-<div class="carousel" style="width: 100%; max-width: 500px; height: 300px;">
-    <input type="radio" name="slider" id="s1" checked>
-    <input type="radio" name="slider" id="s2">
-    <input type="radio" name="slider" id="s3">
-    <input type="radio" name="slider" id="s4">
-    <input type="radio" name="slider" id="s5">
-    <input type="radio" name="slider" id="s6">
-    <input type="radio" name="slider" id="s7">
-    <input type="radio" name="slider" id="s8">
-    <input type="radio" name="slider" id="s9">
-    <input type="radio" name="slider" id="s10">
+<div class="carousel">
+  <input type="radio" name="slider" id="s1" checked>
+  <input type="radio" name="slider" id="s2">
+  <input type="radio" name="slider" id="s3">
+  <input type="radio" name="slider" id="s4">
+  <input type="radio" name="slider" id="s5">
+  <input type="radio" name="slider" id="s6">
+  <input type="radio" name="slider" id="s7">
+  <input type="radio" name="slider" id="s8">
+  <input type="radio" name="slider" id="s9">
+  <input type="radio" name="slider" id="s10">
 
-    <div class="slides">
-        <img src="/assets/image1.JPG">
-        <img src="/assets/image2.JPG">
-        <img src="/assets/image3.JPG">
-        <img src="/assets/image4.JPG">
-        <img src="/assets/image5.JPG">
-        <img src="/assets/image6.JPG">
-        <img src="/assets/image7.JPG">
-        <img src="/assets/image8.JPG">
-        <img src="/assets/map.png">
-        <img src="/assets/title.png">
-    </div>
+  <div class="slides">
+    <div class="slide"><img src="assets/image1.JPG" /></div>
+    <div class="slide"><img src="assets/image2.JPG" /></div>
+    <div class="slide"><img src="assets/image3.JPG" /></div>
+    <div class="slide"><img src="assets/image4.JPG" /></div>
+    <div class="slide"><img src="assets/image5.JPG" /></div>
+    <div class="slide"><img src="assets/image6.JPG" /></div>
+    <div class="slide"><img src="assets/image7.JPG" /></div>
+    <div class="slide"><img src="assets/image8.JPG" /></div>
+    <div class="slide"><img src="assets/map.png" /></div>
+    <div class="slide"><img src="assets/title.png" /></div>
+  </div>
 
-    <div class="navigation">
-        <label for="s1" class="bar"></label>
-        <label for="s2" class="bar"></label>
-        <label for="s3" class="bar"></label>
-        <label for="s4" class="bar"></label>
-        <label for="s5" class="bar"></label>
-        <label for="s6" class="bar"></label>
-        <label for="s7" class="bar"></label>
-        <label for="s8" class="bar"></label>
-        <label for="s9" class="bar"></label>
-        <label for="s10" class="bar"></label>
-    </div>
+  <div class="navigation">
+    <label for="s1" class="bar"></label>
+    <label for="s2" class="bar"></label>
+    <label for="s3" class="bar"></label>
+    <label for="s4" class="bar"></label>
+    <label for="s5" class="bar"></label>
+    <label for="s6" class="bar"></label>
+    <label for="s7" class="bar"></label>
+    <label for="s8" class="bar"></label>
+    <label for="s9" class="bar"></label>
+    <label for="s10" class="bar"></label>
+  </div>
 </div>
-<!-- Carousel Ends -->
-        <!-- Carousel Ends -->
-    </div>
 
     <div class="about-container" id="about">
         <h1 class="about-title">About us:</h1>

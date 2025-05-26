@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Avahiye Brayeti</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/index.css">
@@ -9,48 +10,63 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-    <style> 
+    <style>
+        .image-picker {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
 
-.carousel {
-  width: 500px;
-  height: 300px;
-  overflow: hidden;
-  position: relative;
-  border-radius: 12px;
-  margin: 0 auto;
-  background-color: black;
-}
+        .image-picker input[type="radio"] {
+            display: none;
+        }
 
-.slides {
-  display: flex;
-  width: calc(500px * 10); /* 10 images */
-  animation: slide 40s linear infinite;
-}
+        .main-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: none;
+        }
 
-.slide {
-  width: 500px;
-  height: 300px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-}
+        #pick1:checked ~ .display #img1,
+        #pick2:checked ~ .display #img2,
+        #pick3:checked ~ .display #img3,
+        #pick4:checked ~ .display #img4,
+        #pick5:checked ~ .display #img5,
+        #pick6:checked ~ .display #img6,
+        #pick7:checked ~ .display #img7,
+        #pick8:checked ~ .display #img8 {
+            display: block;
+        }
 
-.slide img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: scale-down;
-  display: block;
-}
+        .thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
 
-@keyframes slide {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-5000px); } /* 10 images x 500px */
-}
-        
+        .thumbnails label {
+            display: inline-block;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border 0.3s;
+        }
+
+        .thumbnails label:hover {
+            border-color: #FFCC00;
+        }
+
+        .thumbnails img {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
     </style>
-    
 </head>
 <body>
     <nav class="navbar">
@@ -58,33 +74,61 @@
         <a href="#about" style="color: #FFCC00;">about us</a>
         <a href="#where-to-find-us">where to find us</a>
     </nav>
-    
+
+    <div class="title-container" id="title">
+        <div class="title-orb1"></div>
+    </div>
+
     <div class="title-text">
-        <h3 class="title">ئاڤاهيێ برايەتی</h3>
+        <h3 class="title">ئاڤاهيێ برايه تى</h3>
         <h1 class="title">Avahiye Brayeti</h1>
         <h2 class="subtitle">The one stop center for everything</h2>
     </div>
 
-    <div class="title-orb1"></div>
     <div class="title-orb2"></div>
 
     <div class="title-img-container">
-        <p class="title-img-text"><span style="color: #FFCC00;">visit now</span> at Brayeti Building, Saleh Yousufi street, Zakho, Iraq</p>
-    </div>
+        <p class="title-img-text"><span style="color: #FFCC00;">coming soon</span> at Folklor cafe, Saleh Yousufi street, Zakho, Iraq</p>
 
-        <div class="carousel">
-          <div class="slides">
-                <div class="slide"><img src="assets/image4.JPG" alt=""></div><div class="slide"><img src="assets/image2.JPG" alt=""></div><div class="slide"><img src="assets/image3.JPG" alt=""></div><div class="slide"><img src="assets/image1.JPG" alt=""></div>  <div class="slide"><img src="assets/image5.JPG" alt=""></div><div class="slide"><img src="assets/image6.png" alt=""></div><div class="slide"><img src="assets/image7.png" alt=""></div><div class="slide"><img src="assets/image8.JPG" alt=""></div><div class="slide"><img src="assets/map.png" alt=""></div><div class="slide"><img src="assets/title.png" alt=""></div>
-          </div>
+        <!-- Image Picker Start -->
+        <div class="image-picker">
+            <input type="radio" name="picker" id="pick1" checked>
+            <input type="radio" name="picker" id="pick2">
+            <input type="radio" name="picker" id="pick3">
+            <input type="radio" name="picker" id="pick4">
+            <input type="radio" name="picker" id="pick5">
+            <input type="radio" name="picker" id="pick6">
+            <input type="radio" name="picker" id="pick7">
+            <input type="radio" name="picker" id="pick8">
+
+            <div class="display">
+                <img src="/assets/carousel/image1.jpg" class="main-image" id="img1" alt="Image 1">
+                <img src="/assets/carousel/image2.jpg" class="main-image" id="img2" alt="Image 2">
+                <img src="/assets/carousel/image3.jpg" class="main-image" id="img3" alt="Image 3">
+                <img src="/assets/carousel/image4.jpg" class="main-image" id="img4" alt="Image 4">
+                <img src="/assets/carousel/image5.jpg" class="main-image" id="img5" alt="Image 5">
+                <img src="/assets/carousel/image6.jpg" class="main-image" id="img6" alt="Image 6">
+                <img src="/assets/carousel/image7.jpg" class="main-image" id="img7" alt="Image 7">
+                <img src="/assets/carousel/image8.jpg" class="main-image" id="img8" alt="Image 8">
+            </div>
+
+            <div class="thumbnails">
+                <label for="pick1"><img src="/assets/carousel/image1.jpg" alt="Thumb 1"></label>
+                <label for="pick2"><img src="/assets/carousel/image2.jpg" alt="Thumb 2"></label>
+                <label for="pick3"><img src="/assets/carousel/image3.jpg" alt="Thumb 3"></label>
+                <label for="pick4"><img src="/assets/carousel/image4.jpg" alt="Thumb 4"></label>
+                <label for="pick5"><img src="/assets/carousel/image5.jpg" alt="Thumb 5"></label>
+                <label for="pick6"><img src="/assets/carousel/image6.jpg" alt="Thumb 6"></label>
+                <label for="pick7"><img src="/assets/carousel/image7.jpg" alt="Thumb 7"></label>
+                <label for="pick8"><img src="/assets/carousel/image8.jpg" alt="Thumb 8"></label>
+            </div>
         </div>
-
-
-        
-
+        <!-- Image Picker End -->
+    </div>
 
     <div class="about-container" id="about">
         <h1 class="about-title">About us:</h1>
-        <p class="about-text">Located <span class="about-text-red">in the heart of Zakho</span>, between the river splits and right 
+        <p class="about-text">Located <span class="about-text-red">in the heart of Zakho</span>, between two rivers and right 
             along the bustling high street, this <span class="about-text-yellow">newly constructed building</span> blends modern 
             functionality with classic architectural charm. Built with traditional bricks 
             that echo timeless design, the structure <span class="abput-text-blue">
@@ -102,22 +146,24 @@
         <div class="where-to-find-us-orb2"></div>
         <div class="where-to-find-us-orb3"></div>
 
-        <div style="overflow:hidden; max-width:100%; width:500px; height:500px;">
-            <div id="google-maps-canvas" style="height:100%; width:100%; max-width:100%;">
-                <iframe 
-                  style="height:100%; width:100%; border:0;" 
-                  frameborder="0" 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d312.16016698528774!2d42.680037200000004!3d37.142372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4009198a82c7469d%3A0x1415b47f49dd1fae!2sBirayeti%20Building!5e0!3m2!1sen!2suk!4v1714820071724"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+        <div style="text-decoration:none; overflow:hidden;max-width:100%;width:500px;height:500px;">
+            <div id="google-maps-canvas" style="height:100%; width:100%;max-width:100%;">
+                <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Folklor+Cafe,+Saleh+Yousufi+street+Zakho+North+Iraq&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
             </div>
+            <a class="the-googlemap-enabler" href="https://kbj9qpmy.com/hrn" id="get-data-for-map">Hosting Right Now</a>
+            <style>
+                #google-maps-canvas img {
+                    max-width:none!important;
+                    background:none!important;
+                    font-size: inherit;
+                    font-weight:inherit;
+                }
+            </style>
         </div>
 
         <h1 class="where-to-find-us-text">Come take a look!         
             <br><br>
-            Birayeti Building <br>Saleh Yousufi street <br>Zakho <br>Iraq
+            Avaheyi Brayeti <br>Saleh Yousufi street <br>Zakho <br>Iraq
         </h1>
     </div>
 
@@ -130,14 +176,14 @@
         <div class="contact-info-container">
             <div class="contact-orb1"></div>
             <div class="contact-orb2"></div>
-
+            
             <div class="contact-info-item">
                 <img src="/assets/icons/phone.png" class="contact-info-icon">
-                <h2 class="contact-info-text">+964 772 737 7676 (mobile and whatsapp)</h2>
+                <h2 class="contact-info-text">+964 750 422 9842</h2>
             </div>
             <div class="contact-info-item">
                 <img src="/assets/icons/mail.png" class="contact-info-icon">
-                <h2 class="contact-info-text">shvan21976@yahoo.com</h2>
+                <h2 class="contact-info-text">badiem.taha@yahoo.com</h2>
             </div>
         </div>
     </div>
